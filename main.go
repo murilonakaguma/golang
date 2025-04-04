@@ -1,29 +1,25 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+	"sort"
+)
 
 func main() {
-	var ages = [4]int{17, 16, 20 ,21}
-	nomes := [4]string{"murilo","jaspion","lucas","bugio"}
+	greeting := "ola mundo"
+	fmt.Println(strings.Contains(greeting, "mundo"))
+	fmt.Println(strings.ReplaceAll(greeting, "ola", "oi"))
+	fmt.Println(strings.ToUpper(greeting))
+	fmt.Println(strings.Index(greeting, "mundo"))
+	fmt.Println(strings.Split(greeting, "mundo"))
+	ages := []int {50, 80, 10}
+	sort.Ints(ages)
 	fmt.Println(ages)
-	fmt.Println(nomes)
-	nomes[2] = "gobetti"
-	fmt.Println(nomes)
-	// Slice 
-	var Score = []int{100, 200, 300,400}
-	fmt.Println(Score)
-	Score[1] = 2
-	fmt.Println(Score, len(Score), cap(Score))
-	rangeOne := Score[1:3]
-	fmt.Println(rangeOne)
-	rangeTwo := Score[2:]
-	fmt.Println(rangeTwo)
-	rangeThree := Score[:3]
-	fmt.Println(rangeThree)
-	var superherois = []string{"robin","flash","iron man"}
-	fmt.Println(superherois)
-	superherois = append(superherois, "ben 10", "batman")
-	fmt.Println(superherois, len(superherois), cap(superherois))
-	superherois[4] = "robin"
-
+	index := sort.SearchInts(ages, 50)
+	fmt.Println(index)
+	names := []string{"murilo","maicon","fabiano"}
+	sort.Strings(names)
+	fmt.Println(names)
+	fmt.Println(sort.SearchStrings(names, "murilo"))
 }
