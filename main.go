@@ -6,16 +6,30 @@ import (
 )
 
 func main() {
-	var numero [5]int
-	var soma int
-	for i := 0; i <5;i++ {
-	fmt.Println("digite cinco numeros:" )
-	fmt.Scan(&numero[i])
-	soma += numero[i]
-}
-
-
-fmt.Println("A soma dos números é:", soma)
+	age := 16
+	fmt.Println(age <= 20)
+	fmt.Println(age >= 20)
+	fmt.Println(age == 20)
+	fmt.Println(age != 20)
+	if age < 20 {
+		fmt.Println("menor que 20 anos")
+	} else if age < 10 {
+		fmt.Println("menor que 10 anos")
+	} else {
+		fmt.Println("nao é menor que 20 anos")
+	}
+	names := []string{"manu", "lucas", "bruce","murilo","robin","igor"}
+	for index, value := range names {
+		if index == 1 {
+			fmt.Println("continue apos a posiçao", index, "e valor", value)
+			continue
+		}
+		if index > 2 {
+			fmt.Println("sair apos", index)
+			break
+		}
+		fmt.Println("valor:", index, value)
+	}
 }
 	
 	
